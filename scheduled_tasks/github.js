@@ -33,11 +33,15 @@ function sortByDate(a, b) {
 
 function getOrgPublicActivity(org, per_page = 100) {
     return new Promise((resolve, reject) => {
-        octokit.activity.getEventsForOrg({
-                org,
-                per_page
+        octokit.activity.getEventsForOrg({org, per_page})
+            .then(data => {
+                resolve(data.data.map(item => {
+                    if(item.payload) {
+                        delete item.payload;
+                    }
+                    return item;
+                }));
             })
-            .then(resolve)
             .catch(reject);
     });
 }
@@ -49,7 +53,6 @@ function getAllOrgPublicActivity(items_per_org = 10) {
         Promise.all(repositories)
             .then(response => {
                 const allData = response
-                    .map(response => response.data)
                     .reduce((a, b) => a.concat(b))
                     .sort(sortByDate);
                 resolve(allData);
