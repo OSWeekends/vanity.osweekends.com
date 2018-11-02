@@ -9,6 +9,14 @@ Información pública de Twitter, Github, Slack y Meetup.
 - [@koolTheba](https://github.com/koolTheba) Diseño y Frontend
 - [@UlisesGascon](https://github.com/UlisesGascon) Backend, API y DB
 
+### Tecnología
+- `Nodejs` v10 (Server)
+- `Pillarsjs` (HTTP)
+- `GoblinDB` (Database)
+- `Puppeteer` (Scraper)
+- `Scheduled` (Cron Jobs)
+- `@octokit/rest` (Github Communication)
+
 ### :round_pushpin: Variables de entorno
 
 - `GITHUB_TOKEN`: Token de github para hacer consultas a la API.
