@@ -1,6 +1,7 @@
 const project = require('pillars');
-const config = require("./config");
 const GDB = require("@goblindb/goblindb");
+const config = require("./config");
+const apiManagement = require('./api');
 
 
 // Wake up GoblinDB
@@ -20,8 +21,7 @@ const apiRoutes = new Route({
     cors: true,
     method: "GET"
 }, function(gw) {
-    console.log("Hello from the API!")
-    gw.json(500);
+    apiManagement(gw, goblinDB);
 });
 
 const rootRoutes = new Route({
