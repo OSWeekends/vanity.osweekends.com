@@ -1,12 +1,18 @@
 const project = require('pillars');
 const config = require("./config");
+const GDB = require("@goblindb/goblindb");
 
 
-// Starting the project
-project.services.get('http').configure({
-    port: config.port
-}).start();
-
+// Wake up GoblinDB
+const goblinDB = GDB({
+    fileName: 'goblin'
+    }, err => {
+        if(err) throw "GoblinDB ERROR:", err;
+        // Starting the project
+        project.services.get('http').configure({
+            port: config.port
+        }).start();
+});
 
 const apiRoutes = new Route({
     id: 'apiRoutes',

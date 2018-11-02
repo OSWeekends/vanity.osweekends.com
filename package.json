@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/OSWeekends/vanity.osweekends.com#readme",
   "dependencies": {
+    "@goblindb/goblindb": "^0.1.1",
     "pillars": "^0.7.1"
   }
 }
