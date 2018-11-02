@@ -22,7 +22,7 @@ async function slackInfo(goblinDB) {
     await page.click('#signin_btn');
     await delay(7000);
     
-    console.log("[Slack Scraper] Step 3: Redirect to stats and retrive data....");
+    console.log("[Slack Scraper] Step 3: Redirect to stats and retrieve data....");
     let data; 
     page.on("response", async response => {
       const url = response.url();
