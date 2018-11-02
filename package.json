@@ -20,7 +20,7 @@
     "@goblindb/goblindb": "^0.1.1",
     "@octokit/rest": "^15.15.1",
     "pillars": "^0.7.1",
-    "puppeteer": "^1.10.0",
+    "puppeteer": "1.9.0",
     "scheduled": "^0.5.0"
   }
 }
