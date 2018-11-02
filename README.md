@@ -1,4 +1,4 @@
-# vanity.osweekends.com
+# https://vanity.osweekends.com
 
 ### Objetivo
 Recolectar todas las métricas más vanidosas de la comunidad en un solo punto.
