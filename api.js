@@ -1,5 +1,5 @@
 function apiRoutValidation (path) {
-     return ['slack', 'twitter', 'github', 'meetup'].includes(path);
+     return ['team', 'sponsors', 'communities', 'slack', 'twitter', 'github', 'meetup'].includes(path);
 }
 
 function  apiManagement  (gw, goblinDB) {

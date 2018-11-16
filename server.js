@@ -7,6 +7,7 @@ const twitter_task = require("./scheduled_tasks/twitter");
 const meetup_task = require("./scheduled_tasks/meetup");
 const slack_task = require("./scheduled_tasks/slack");
 const github_task = require("./scheduled_tasks/github");
+const organziation_task = require("./scheduled_tasks/organization");
 
 // Wake up GoblinDB
 const goblinDB = GDB({
@@ -71,15 +72,16 @@ const hourlyTask = new Scheduled({
     pattern: "0 * * * * *", // Every Hour
     task: () => {
         github_task.allData(goblinDB);
+        organziation_task.communities(goblinDB);
+        organziation_task.team(goblinDB);
+        organziation_task.sponsors(goblinDB);
     }
 });
 
-// Start Jobs
+// -- Start Jobs
 dailyTasks.start();
 hourlyTask.start();
 
-// Autostart Jobs
-/*
-dailyTasks.launch();
-hourlyTask.launch();
-*/
+// -- Autostart Jobs
+//dailyTasks.launch();
+//hourlyTask.launch();
