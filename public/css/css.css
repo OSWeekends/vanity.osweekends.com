@@ -9,10 +9,15 @@ body {
 	margin-bottom: 100px;
 }
 
+#info-wrapper {
+  display: none; 
+}
+
+
+
 .bg-corporate {
 	background-color: #003DA5;
 }
-
 
 /* -- Cards -- */
 
@@ -120,6 +125,13 @@ body {
 }
 
 
+/* -- Loading Status -- */
+
+#loading-status img {
+   height: 256px;
+   margin-top: 80px; 
+}
+
 /* -- Footer -- */
 
 .footer {
@@ -165,10 +177,6 @@ body {
 .dots span:nth-child(3) {
 	animation-delay: .4s;
 }
-
-
-/* -- EXTRAS -- */
-
 
 /* -- Media queries */
 
