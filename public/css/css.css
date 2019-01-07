@@ -1,12 +1,64 @@
-html {
+ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
-  margin-top:100px;
+  margin-top: 100px;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 60px;
 }
+
+.bg-corporate {
+  background-color: #003DA5;
+}
+
+/* -- Cards -- */
+
+.info-twitter {
+  background-color:#1DADE9; 
+  color:#fff;
+}
+
+.info-slack {
+  background-color: #EAB23D;
+  color: #fff;
+}
+
+.info-meetup {
+  background-color: #F34363;
+  color: #fff;
+  padding-bottom: 1.8rem; 
+}
+
+.info-github {
+  background-color: #24292D;
+  color: #fff;
+}
+
+.card a {
+  color: white;
+  text-decoration: underline;
+}
+
+.card-icon { 
+  text-align: center; 
+  font-size: 10rem; 
+  padding: 1rem;
+}
+
+.card-body { 
+  line-height: 12px;
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 1.6rem; 
+  font-weight: bold;
+}
+
+/* -- Footer -- */
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -17,26 +69,12 @@ body {
   background-color: #f5f5f5;
 }
 
-body > .container {
-  padding: 60px 15px 0;
-}
-
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
 }
 
-code {
-  font-size: 80%;
-}
-
-
-.bg-corporate {
-  background-color: #003DA5;
-}
-
-
-/* -- Animations */ 
+/* -- Animations loading page */ 
 @keyframes blink {
     0% {
       opacity: .2;
@@ -65,3 +103,11 @@ code {
 }
 
 
+/* -- EXTRAS -- */
+/* -- Media queries */ 
+
+@media(max-width: 990px) {
+  .card {
+    margin-bottom: 2rem; 
+  }
+}

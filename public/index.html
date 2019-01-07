@@ -10,7 +10,7 @@
          crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
       <link rel="stylesheet" href="css/css.css">
-      <title>OSW Vanity</title>
+      <title>OSW Vanity Page</title>
    </head>
    <body>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-corporate">
@@ -21,24 +21,125 @@
             </a>
          </div>
       </nav>
-      <div class="cointainer">
-         <header>
-            <div class="main-title text-center">
-               <h1>OSW Vanity</h1>
+      <header>
+         <div class="main-title">
+            <h1 class="display-3 text-center">OSW Vanity Page</h1>
+         </div>
+      </header>
+      <section id="main-cards" class="my-5 text-center">
+         <div class="container">
+            <div class="row">
+               <div class="col">
+                  <div class="main-title text-center mb-5">
+                     <h1>Social Impact</h1>
+                     <p class="text-secondary">These are our main references in Social Media</p>
+                  </div>
+               </div>
             </div>
-         </header>
-         <section id="loading" class="text-center">
-            <img src="/img/spinner.svg" style="height:256px;" alt="spinning cat is long">
-            <h4 class="dots">Loading data<span>.</span><span>.</span><span>.</span></h4>
-         </section>
-      </div>
+         </div>
+         <!-- My cards -->
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="card info-twitter">
+                     <a href="https://twitter.com/os_weekends" target="_blank" alt="OSW Twitter account">
+                     <i class="fab fa-twitter card-icon"></i>
+                     </a>
+                     <div class="card-body">
+                        <h5 class="card-title"><a href="https://twitter.com/os_weekends" target="_blank" alt="OSW Twitter account">Twitter</a></h5>
+                        <p class="card-figures">3071 Tweets</p>
+                        <p class="card-figures">844 Following</p>
+                        <p class="card-figures">2143 Followers</p>
+                        <p class="card-figures">2576 Likes</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="card info-slack">
+                     <a href="https://invitations-osweekends.herokuapp.com/" target="_blank" alt="OSW Slack invitation">
+                     <i class="fab fa-slack-hash card-icon"></i>
+                     </a>
+                     <div class="card-body">
+                        <h5 class="card-title"><a href="https://invitations-osweekends.herokuapp.com/" target="_blank" alt="OSW Slack invitation">Slack</a></h5>
+                        <p class="card-figures">873 Users</p>
+                        <p class="card-figures">114 Active-readers</p>
+                        <p class="card-figures">39 Active-writers</p>
+                        <p class="card-figures">397202 Messages</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="card info-meetup">
+                     <a href="https://www.meetup.com/es-ES/Open-Source-Weekends/" target="_blank" alt="OSW MeetUp account">
+                     <i class="fab fa-meetup card-icon"></i>
+                     </a>
+                     <div class="card-body">
+                        <h5 class="card-title"><a href="https://www.meetup.com/es-ES/Open-Source-Weekends/" target="_blank" alt="OSW MeetUp account">MeetUp</a></h5>
+                        <p class="card-figures">2785 Members</p>
+                        <p class="card-figures">0 Future events</p>
+                        <p class="card-figures">23 Past events</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="card info-github">
+                     <a href="https://github.com/OSWeekends" target="_blank" alt="OSW GitHub account">
+                     <i class="fab fa-github card-icon"></i>
+                     </a>
+                     <div class="card-body">
+                        <h5 class="card-title"><a href="https://github.com/OSWeekends" target="_blank" alt="OSW GitHub account">GitHub</a></h5>
+                        <p class="card-figures">123 Members</p>
+                        <p class="card-figures">6 Organizations</p>
+                        <p class="card-figures">76 Repositories</p>
+                        <p class="card-figures">7 Languages</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="team-cards">
+         <div class="container">
+            <header>
+               <div class="main-title text-center">
+                  <h1>The Team</h1>
+               </div>
+            </header>
+         </div>
+      </section>
+      <section id="communities-cards">
+         <div class="container">
+            <header>
+               <div class="main-title text-center">
+                  <h1>The Communities</h1>
+               </div>
+            </header>
+            <div class="row">
+            </div>
+         </div>
+      </section>
+      <section id="sponsors-cards">
+         <div class="container">
+            <header>
+               <div class="main-title text-center">
+                  <h1>The Sponsors</h1>
+               </div>
+            </header>
+            <div class="row">
+            </div>
+         </div>
+      </section>
+      <section id="loading" class="text-center" style="display:none">
+         <img src="/img/spinner.svg" style="height:256px;" alt="spinning cat is long">
+         <h4 class="dots">Loading data<span>.</span><span>.</span><span>.</span></h4>
+      </section>
       <footer class="footer" >
          <div class="text-center">
             <span class="text-muted">Made with 💙 by Guilders!</span>
          </div>
       </footer>
-      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-         crossorigin="anonymous"></script>
+      <!-- Scripts -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
          crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
