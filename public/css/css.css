@@ -57,6 +57,25 @@ body {
   font-weight: bold;
 }
 
+/* -- The Team -- */
+.team-section {
+  justify-content: center;
+}
+
+.team-section div {
+  font-size: 30px; 
+  max-width: 95%; 
+  word-wrap: break-word;  
+  text-align: center;
+}
+
+.team-section a {
+  background-color: #003DA5; 
+  color: #fff; 
+  padding: 0 10px;
+}
+
+
 /* -- Footer -- */
 
 .footer {
