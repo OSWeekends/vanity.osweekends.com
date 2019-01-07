@@ -13,7 +13,31 @@ body {
   display: none; 
 }
 
+#error-data {
+  display: none;
+}
 
+#error-data h1 {
+  background-color: #C21018;
+  display: inline;
+  padding: 2px 10px;
+  color: #FFF;
+  -webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+}
+
+#error-data h2 {
+  margin-top: 15px;
+}
+
+#error-data {
+  margin-top: 60px;
+}
+
+#error-data img {
+  max-height: 20rem;
+}
 
 .bg-corporate {
 	background-color: #003DA5;
