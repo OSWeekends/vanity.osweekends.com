@@ -92,11 +92,11 @@ body {
 
 .team-section {
 	justify-content: center;
+	max-width: 100%;
 }
 
 .team-section div {
 	font-size: 30px;
-	max-width: 95%;
 	word-wrap: break-word;
 	text-align: center;
 }
@@ -113,16 +113,17 @@ body {
 
 .communities-section {
 	justify-content: center;
+	max-width: 100%;
 }
 
 .communities-section div {
 	font-size: 30px;
-	max-width: 95%;
 	word-wrap: break-word;
 	text-align: center;
 }
 
 .communities-section a {
+  margin: 0 3px;
 	background-color: #dfdde0;
 	color: #605865;
 	font-weight: bold;
@@ -134,16 +135,17 @@ body {
 
 .sponsors-section {
 	justify-content: center;
+	max-width: 100%;
 }
 
 .sponsors-section div {
 	font-size: 30px;
-	max-width: 95%;
 	word-wrap: break-word;
 	text-align: center;
 }
 
 .sponsors-section a {
+  margin: 0 3px;
 	background-color: #434343;
 	color: #fff;
 	padding: 0 15px;

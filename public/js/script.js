@@ -3,6 +3,8 @@ const loadingSlctr = document.getElementById("loading-status");
 const errorSlctr = document.getElementById("error-data");
 const infoSlctr = document.getElementById("info-wrapper");
 const teamSlctr = document.querySelector(".team-section div");
+const communiSlctr = document.querySelector(".communities-section div");
+const sponsorsSlctr = document.querySelector(".sponsors-section div");
 
 // Functions
 
@@ -48,16 +50,6 @@ function errorShow(){
 }
 
 /** 
- * Generates all the HTML from the AJAX info
- * Displays the information container.
- * @param {object} data - AJAX response data
- */
-function dataShow(data){
-    teamSlctr.innerHTML = renderTeam(data.team);
-    infoSlctr.style.display = "inherit";
-}
-
-/** 
  * Generates the HTML for rendering the team' members info
  * @param {array} team - Team members' details from AJAX
  * @return {string} - HTML generated 
@@ -69,6 +61,45 @@ function renderTeam(team){
     }); 
     return html;
 }
+
+/** 
+ * Generates the HTML for rendering the communities info
+ * @param {array} communities - Communities' details from AJAX
+ * @return {string} - HTML generated 
+ */
+function renderCommunities(communities){
+    let html = "";
+    communities.forEach(function(comm){
+        html += `<a href="${comm.url}" target="_blank" alt="${comm.name} website">${comm.name}</a>`;
+    }); 
+    return html;
+}
+
+/** 
+ * Generates the HTML for rendering the sponsors info
+ * @param {array} sponsors - Sponsors' details from AJAX
+ * @return {string} - HTML generated 
+ */
+function renderSponsors(sponsors){
+    let html = "";
+    sponsors.forEach(function(group){
+        html += `<a href="${group.url}" target="_blank" alt="${group.name} website">${group.name}</a>`;
+    }); 
+    return html;
+}
+
+/** 
+ * Generates all the HTML from the AJAX info (team, communities, sponsors)
+ * Displays the information container
+ * @param {object} data - AJAX response data
+ */
+function dataShow(data){
+    teamSlctr.innerHTML = renderTeam(data.team);
+    communiSlctr.innerHTML = renderCommunities(data.communities);
+    sponsorsSlctr.innerHTML = renderSponsors(data.sponsors);
+    infoSlctr.style.display = "inherit";
+}
+
 
 ajaxRequest("api/v1", function (err, data) {
     err ? errorShow() : dataShow(data);
