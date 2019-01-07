@@ -72,9 +72,27 @@ body {
 .team-section a {
   background-color: #003DA5; 
   color: #fff; 
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
+/* -- The Communities -- */
+.communities-section {
+  justify-content: center;
+}
+
+.communities-section div {
+  font-size: 30px; 
+  max-width: 95%; 
+  word-wrap: break-word;  
+  text-align: center;
+}
+
+.communities-section a {
+  background-color: #dfdde0; 
+  color: #605865;
+  font-weight: bold;
+  padding: 0 15px;
+}
 
 /* -- Footer -- */
 
