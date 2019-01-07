@@ -102,6 +102,7 @@ body {
 }
 
 .team-section a {
+  margin: 0 3px;
 	background-color: #003DA5;
 	color: #fff;
 	padding: 0 15px;

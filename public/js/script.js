@@ -1,7 +1,8 @@
 // Variables
 const loadingSlctr = document.getElementById("loading-status");
 const errorSlctr = document.getElementById("error-data");
-
+const infoSlctr = document.getElementById("info-wrapper");
+const teamSlctr = document.querySelector(".team-section div");
 
 // Functions
 
@@ -46,8 +47,31 @@ function errorShow(){
     errorSlctr.style.display = "inherit";
 }
 
+/** 
+ * Generates all the HTML from the AJAX info
+ * Displays the information container.
+ * @param {object} data - AJAX response data
+ */
+function dataShow(data){
+    teamSlctr.innerHTML = renderTeam(data.team);
+    infoSlctr.style.display = "inherit";
+}
+
+/** 
+ * Generates the HTML for rendering the team' members info
+ * @param {array} team - Team members' details from AJAX
+ * @return {string} - HTML generated 
+ */
+function renderTeam(team){
+    let html = "";
+    team.forEach(function(member){
+        html += `<a href="${member.Twitter}" target="_blank" alt="${member.name} in Twitter">${member.name}</a>`;
+    }); 
+    return html;
+}
 
 ajaxRequest("api/v1", function (err, data) {
-    err ? errorShow() : console.log("Data:", data);
+    err ? errorShow() : dataShow(data);
+    console.log("Data: ", data);
     hideLoading();
 });
