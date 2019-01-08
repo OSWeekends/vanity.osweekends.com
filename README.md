@@ -5,6 +5,12 @@ Recolectar todas las métricas más vanidosas de la comunidad en un solo punto.
 
 Información pública de Twitter, Github, Slack y Meetup.
 
+### Demo
+
+
+![captura de pantalla](other/vanity_capture.gif)
+
+
 ### Equipo: Guild 24
 - [@koolTheba](https://github.com/koolTheba) Diseño y Frontend
 - [@UlisesGascon](https://github.com/UlisesGascon) Backend, API y DB
@@ -16,6 +22,7 @@ Información pública de Twitter, Github, Slack y Meetup.
 - `Puppeteer` (Scraper)
 - `Scheduled` (Cron Jobs)
 - `@octokit/rest` (Github Communication)
+- `moment.js` (Timeago en front)
 
 ### :round_pushpin: Variables de entorno
 
