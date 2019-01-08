@@ -9,10 +9,66 @@ body {
 	margin-bottom: 100px;
 }
 
+/* Feed CSS - @see https://www.bootdey.com/snippets/view/Profile-page-with-activities#html */ 
+
+.media-body {
+  display: flex;
+  justify-content:start;
+  align-items:start;
+
+}
+
+.feed-element {
+	padding: 15px 0 15px 0;
+}
+
+.media-body > a {
+  padding:1px;
+  border: solid 1px #DFDDE0;
+  margin-right: 10px;
+  	border-radius: 10%;
+}
+
+.img-square {
+	  width: 60px;
+		border-radius: 10%;
+}
+
+
+
+#info-wrapper {
+  display: none; 
+}
+
+#error-data {
+  display: none;
+}
+
+#error-data h1 {
+  background-color: #C21018;
+  display: inline;
+  padding: 2px 10px;
+  color: #FFF;
+  -webkit-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.75);
+}
+
+#error-data h2 {
+  margin-top: 15px;
+}
+
+#error-data {
+  margin-top: 60px;
+}
+
+#error-data img {
+  max-height: 20rem;
+}
+
 .bg-corporate {
 	background-color: #003DA5;
 }
-
 
 /* -- Cards -- */
 
@@ -63,16 +119,19 @@ body {
 
 .team-section {
 	justify-content: center;
+	max-width: 100%;
 }
 
 .team-section div {
-	font-size: 30px;
-	max-width: 95%;
-	word-wrap: break-word;
-	text-align: center;
+    font-size: 1.9rem;
+    word-wrap: break-word;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 10px;
 }
 
 .team-section a {
+  margin: 0 3px;
 	background-color: #003DA5;
 	color: #fff;
 	padding: 0 15px;
@@ -83,16 +142,19 @@ body {
 
 .communities-section {
 	justify-content: center;
+	max-width: 100%;
 }
 
 .communities-section div {
-	font-size: 30px;
-	max-width: 95%;
-	word-wrap: break-word;
-	text-align: center;
+    font-size: 1.9rem;
+    word-wrap: break-word;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 10px;
 }
 
 .communities-section a {
+  margin: 0 3px;
 	background-color: #dfdde0;
 	color: #605865;
 	font-weight: bold;
@@ -104,21 +166,31 @@ body {
 
 .sponsors-section {
 	justify-content: center;
+	max-width: 100%;
 }
 
 .sponsors-section div {
-	font-size: 30px;
-	max-width: 95%;
-	word-wrap: break-word;
-	text-align: center;
+    font-size: 1.9rem;
+    word-wrap: break-word;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 10px;
 }
 
 .sponsors-section a {
+  margin: 0 3px;
 	background-color: #434343;
 	color: #fff;
 	padding: 0 15px;
 }
 
+
+/* -- Loading Status -- */
+
+#loading-status img {
+   height: 256px;
+   margin-top: 80px; 
+}
 
 /* -- Footer -- */
 
@@ -165,10 +237,6 @@ body {
 .dots span:nth-child(3) {
 	animation-delay: .4s;
 }
-
-
-/* -- EXTRAS -- */
-
 
 /* -- Media queries */
 
