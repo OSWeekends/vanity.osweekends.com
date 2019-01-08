@@ -9,7 +9,7 @@ const twitterSlctr = document.querySelector(".info-twitter .card-body");
 const slackSlctr = document.querySelector(".info-slack .card-body");
 const meetupSlctr = document.querySelector(".info-meetup .card-body");
 const githubSlctr = document.querySelector(".info-github .card-body");
-
+const latestActivitySlctr = document.querySelector(".feed-activity-list");
 
 // Functions
 
@@ -62,7 +62,7 @@ function errorShow(){
 function renderTeam(team){
     let html = "";
     team.forEach(function(member){
-        html += `<a href="${member.Twitter}" target="_blank" alt="${member.name} in Twitter">${member.name}</a>`;
+        html += `<a href="${member.twitter}" target="_blank" alt="${member.name} in Twitter">${member.name}</a>`;
     }); 
     return html;
 }
@@ -144,9 +144,96 @@ function renderGithub(data){
     <p class="card-figures">${data.public_repos.language.length} Languages</p>`
 }
 
+/**
+ * Return the human readible value of the github activity type given.
+ * Some events were ignored, so by default it returns 'has collaborated with OSW'
+ * @see:https://developer.github.com/v3/activity/events/types/
+ * @param {string} type - Github activity type such as 'ForkEvent'
+ * @return {string} - human readible version
+*/
+
+function decodeGithubActivityType (type) {
+    const githubTypes = {
+        "CheckSuiteEvent": "has triggered a check suite",
+        "CommitCommentEvent": "has made a commit comment",
+        "ContentReferenceEvent": "has included an URL",
+        "CreateEvent": "has created a new repository/branch",
+        "DeleteEvent": "has deleted a branch/tag",
+        "ForkEvent": "has forked a repository",
+        "GollumEvent": "has created/updated a wiki page",
+        "IssueCommentEvent": "has edited an issue",
+        "LabelEvent": "has edited a label in a repository",
+        "MembershipEvent": "has been changed permissions from a team",
+        "MilestoneEvent": "has edited a milestone in a project",
+        "OrganizationEvent": "has been changed permissions from the org",
+        "PageBuildEvent": "has created/edited a GitHub page",
+        "ProjectCardEvent": "has edited a project card",
+        "ProjectColumnEvent": "has edited a project column",
+        "ProjectEvent": "has edited a project in a repository",
+        "PublicEvent": "has open sourced a repository",
+        "PullRequestEvent": "has edited a pull request",
+        "PullRequestReviewCommentEvent": "",
+        "PushEvent": "has pushed some nice code",
+        "ReleaseEvent": "has published a release of a project",
+        "RepositoryEvent": "has edited a repository",
+        "StatusEvent": "has changed the status of a repository",
+        "TeamEvent": "has edited the repository' team",
+        "TeamAddEvent": "has added a repository to a team",
+        "WatchEvent": "has starred a repository"
+    };
+        let match = githubTypes[type];
+        return match ? match : "has collaborated with OSW";
+}
+
+/**
+ * Returns the html from the activity object given 
+ * @param {object} activity - Github activity details
+ * @return {string} - html 
+*/
+function activityDetails(activity){
+    const userName = activity.actor.display_login;
+    const userUrl = `https://github.com/${activity.actor.login}`;
+    const userAvatar = activity.actor.avatar_url;
+    const activityPerformed = decodeGithubActivityType(activity.type);
+    const targetName = activity.repo.name
+    const targetUrl = `https://github.com/${targetName}`;
+    const createdAt = activity.created_at
+    return `<div class="feed-element">
+      <div class="media-body">
+        
+        <a href="${userUrl}" target="_blank">
+          <img alt="${userName}' Avatar" class="img-square" src="${userAvatar}">
+        </a>
+      
+        <div>  
+             <a href="${userUrl}" target="_blank" alt="${userName}' profile">
+                <strong>${userName}</strong></a> ${activityPerformed} in <strong><a href="${targetUrl}" target="_blank" alt="Repo: ${targetName}">${targetName}</a></strong>.
+            <br>
+             <small class="text-muted">
+                ${moment(createdAt).fromNow()}
+             </small>
+         </div>
+      
+      </div>
+   </div>`;
+}
+
+/**
+ * Returns the html from the activities array given 
+ * @param {array} activities - Array that contains GitHub activities' object
+ * @return {string} - html 
+*/
+function renderLatestActivity(activities){
+    let html = "";
+    activities.forEach(function(activity){
+        html += activityDetails(activity); 
+    });
+    return html;
+}
+
 
 /** 
- * Generates all the HTML from the AJAX info (team, communities, sponsors)
+ * Embed all the HTML generated parsing data from the AJAX info (team, communities, sponsors)
  * Displays the information container
  * @param {object} data - AJAX response data
  */
@@ -158,7 +245,9 @@ function dataShow(data){
     slackSlctr.innerHTML = renderSlack(data.slack);
     meetupSlctr.innerHTML = renderMeetup(data.meetup);
     githubSlctr.innerHTML = renderGithub(data.github);
+    latestActivitySlctr.innerHTML = renderLatestActivity(data.github.public_activity);
     infoSlctr.style.display = "inherit";
+    
 }
 
 

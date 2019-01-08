@@ -9,6 +9,33 @@ body {
 	margin-bottom: 100px;
 }
 
+/* Feed CSS - @see https://www.bootdey.com/snippets/view/Profile-page-with-activities#html */ 
+
+.media-body {
+  display: flex;
+  justify-content:start;
+  align-items:start;
+
+}
+
+.feed-element {
+	padding: 15px 0 15px 0;
+}
+
+.media-body > a {
+  padding:1px;
+  border: solid 1px #DFDDE0;
+  margin-right: 10px;
+  	border-radius: 10%;
+}
+
+.img-square {
+	  width: 60px;
+		border-radius: 10%;
+}
+
+
+
 #info-wrapper {
   display: none; 
 }
@@ -96,9 +123,11 @@ body {
 }
 
 .team-section div {
-	font-size: 30px;
-	word-wrap: break-word;
-	text-align: center;
+    font-size: 1.9rem;
+    word-wrap: break-word;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 10px;
 }
 
 .team-section a {
@@ -117,9 +146,11 @@ body {
 }
 
 .communities-section div {
-	font-size: 30px;
-	word-wrap: break-word;
-	text-align: center;
+    font-size: 1.9rem;
+    word-wrap: break-word;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 10px;
 }
 
 .communities-section a {
@@ -139,9 +170,11 @@ body {
 }
 
 .sponsors-section div {
-	font-size: 30px;
-	word-wrap: break-word;
-	text-align: center;
+    font-size: 1.9rem;
+    word-wrap: break-word;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 10px;
 }
 
 .sponsors-section a {
