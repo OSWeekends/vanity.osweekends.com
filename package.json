@@ -1,0 +1,26 @@
+{
+  "name": "vanity.osweekends.com",
+  "version": "1.0.0",
+  "description": "A very egocentric way to measure our community",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSWeekends/vanity.osweekends.com.git"
+  },
+  "author": "Open Source Weekends",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/OSWeekends/vanity.osweekends.com/issues"
+  },
+  "homepage": "https://github.com/OSWeekends/vanity.osweekends.com#readme",
+  "dependencies": {
+    "@goblindb/goblindb": "^0.1.1",
+    "@octokit/rest": "^15.15.1",
+    "pillars": "^0.7.1",
+    "puppeteer": "1.9.0",
+    "scheduled": "^0.5.0"
+  }
+}
