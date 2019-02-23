@@ -59,7 +59,7 @@ project.routes.add(staticFiles);
 // Cron Jobs definition
 const dailyTasks = new Scheduled({
     id: "dailyTasks",
-    pattern: "00 9 * * * *", // 09:00 AM every day
+    pattern: "0 9 * * * *", // 09:00 AM every day
     task: () => {
         slack_task.slackInfo(goblinDB);
         twitter_task.twitterInfo(goblinDB);
@@ -83,5 +83,5 @@ dailyTasks.start();
 hourlyTask.start();
 
 // -- Autostart Jobs
-//dailyTasks.launch();
-//hourlyTask.launch();
+dailyTasks.launch();
+hourlyTask.launch();
