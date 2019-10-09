@@ -18,7 +18,7 @@
   "homepage": "https://github.com/OSWeekends/vanity.osweekends.com#readme",
   "dependencies": {
     "@goblindb/goblindb": "^0.1.1",
-    "@octokit/rest": "^15.15.1",
+    "@octokit/rest": "^16.0.0",
     "pillars": "^0.7.1",
     "puppeteer": "1.9.0",
     "scheduled": "^0.5.0"
