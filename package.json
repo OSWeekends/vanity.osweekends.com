@@ -4,7 +4,9 @@
   "description": "A very egocentric way to measure our community",
   "main": "server.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,8 @@
     "@octokit/rest": "^15.15.1",
     "pillars": "^0.7.1",
     "puppeteer": "1.9.0",
-    "scheduled": "^0.5.0"
-  }
+    "scheduled": "^0.5.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
